@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Princess Memories 📸</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  overflow:hidden;
+  background:linear-gradient(135deg,#ffb3d9,#ff66b2,#ff3399);
+  font-family:cursive;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
+  text-align:center;
+}
+
+/* Top Text */
+h1{
+  margin-top:40px;
+  font-size:45px;
+}
+
+/* Center Area */
+.center-area{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+}
+
+/* Slider */
+.slider-container{
+  position:relative;
+  width:90%;
+  max-width:420px;
+  height:65vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.slider-container img{
+  position:absolute;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+
+.slider-container img.active{
+  opacity:1;
+}
+
+/* Button */
+.btn{
+  margin-bottom:40px;
+  padding:15px 35px;
+  font-size:20px;
+  background:white;
+  color:#ff0066;
+  text-decoration:none;
+  border-radius:40px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Beautiful Girl 👑📸</h1>
+
+<div class="center-area">
+  <div class="slider-container">
+    <img src="Palu/p1.png" class="active">
+    <img src="Palu/p2.png">
+    <img src="Palu/p3.png">
+    <img src="Palu/p4.png">
+  </div>
+</div>
+
+<a href="final.html" class="btn">Final Royal Wish 💌</a>
+
+<script>
+const slides = document.querySelectorAll(".slider-container img");
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 2500);
+</script>
+
+</body>
+</html>
